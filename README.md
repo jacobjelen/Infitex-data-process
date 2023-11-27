@@ -1,8 +1,6 @@
 # Infitex-data-process
 Processing data from the 4-wire datalogger
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a0271b1e-07f6-454d-b792-ab5d0c44274b/deploy-status)](https://app.netlify.com/sites/infitex-data-process/deploys)
-
 ## Simple datalogger-data process
 
 1. Install CoolTerm
@@ -23,7 +21,7 @@ Processing data from the 4-wire datalogger
     - To stop recording, go to Connection > Capture to text/binary file > Stop
 
 4. Process data
-    - go to **XXXXXXXXXXXXXX**
+    - go to **[https://infitex-data-process.netlify.app/](https://infitex-data-process.netlify.app/)** [![Netlify Status](https://api.netlify.com/api/v1/badges/a0271b1e-07f6-454d-b792-ab5d0c44274b/deploy-status)](https://app.netlify.com/sites/infitex-data-process/deploys)
     - upload the .txt file with recorded data
     - click ‘Process’
     - download in a .txt or .csv
