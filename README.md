@@ -1,7 +1,7 @@
 # Infitex-data-process
 Processing data from the 4-wire datalogger
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a0271b1e-07f6-454d-b792-ab5d0c44274b/deploy-status)](https://app.netlify.com/sites/infitex-data-process/deploys)
 
 ## Simple datalogger-data process
 
@@ -38,4 +38,4 @@ Processing data from the 4-wire datalogger
     - click Connect and select Seeed XIAO M0
     - you should see when you press on the sensor
 
-! Recording and visualising data does not work simultaneously. the serial port can only be connected to one at a time
+**Recording and visualising data does not work simultaneously. the serial port can only be connected to one at a time**
