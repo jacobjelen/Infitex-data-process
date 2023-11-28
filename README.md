@@ -21,18 +21,18 @@ Processing data from the 4-wire datalogger
     - To stop recording, go to Connection > Capture to text/binary file > Stop
 
 4. Process data
-    - go to **[https://infitex-data-process.netlify.app/](https://infitex-data-process.netlify.app/)** [![Netlify Status](https://api.netlify.com/api/v1/badges/a0271b1e-07f6-454d-b792-ab5d0c44274b/deploy-status)](https://app.netlify.com/sites/infitex-data-process/deploys)
+    - go to **[https://infitex-data-process.netlify.app/](https://infitex-data-process.netlify.app/)**   [![Netlify Status](https://api.netlify.com/api/v1/badges/a0271b1e-07f6-454d-b792-ab5d0c44274b/deploy-status)](https://app.netlify.com/sites/infitex-data-process/deploys)
     - upload the .txt file with recorded data
     - click ‘Process’
     - download in a .txt or .csv
-    - the data is in the following format: **XXXXXXXXXXXXXX**
+    - the data is in **timestamp,x,y,z;**. For exaplme: **2047594,60,677,1568;**
         - timestamp is in milliseconds since you plug in the sensor(usb)
         - X is 0 - 1000 from left to right of the insole
         - Y is 0 - 1000 from heel to toe of the insole
         - Z/activation is 0 - 4095 representing the pressure. Anything below 100 is considered noise. I was only able to get values up to about 2500 with the pressure I could excerpt on with my thumb.
 
 5. Live visualisation
-    - go to **XXXXXXXXXXXXXX**
+    - go to **[https://infitex-datalogger-insole.netlify.app/](https://infitex-datalogger-insole.netlify.app/)**  [![Netlify Status](https://api.netlify.com/api/v1/badges/b2fb875b-c504-46f7-ab6c-7fb0ed7eec1c/deploy-status)](https://app.netlify.com/sites/infitex-datalogger-insole/deploys)
     - click Connect and select Seeed XIAO M0
     - you should see when you press on the sensor
 
