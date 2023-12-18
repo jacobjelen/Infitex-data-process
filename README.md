@@ -37,3 +37,18 @@ Processing data from the 4-wire datalogger
     - you should see when you press on the sensor
 
 **Recording and visualising data does not work simultaneously. the serial port can only be connected to one at a time**
+
+
+## Edit/Upload firmware to the Data-logger
+
+1. Install Arduino IDE
+    - **[https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)**
+
+2. Open DataloggerFirmware/DataloggerFirmware.ino in Arduino
+
+3. Connect your data-logger to USB
+    - Tools - Board - Seeed SAMD Boards - Seeeduino XIAO
+    - Tools - Port - select the port where Seeeduino XIAO is connected
+
+4. Upload the firmware
+    - Sketch - Upload
