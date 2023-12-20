@@ -1,10 +1,31 @@
+
 document.getElementById('processButton').addEventListener('click', processFile);
 document.getElementById('downloadTxt').addEventListener('click', () => download('txt'));
 document.getElementById('downloadCsv').addEventListener('click', () => download('csv'));
 
 let processedData = [];
 
+let activationThreshold = document.getElementById('thresholdInput').value;
+document.getElementById('thresholdInput').onchange = ()=>{
+  activationThreshold = document.getElementById('thresholdInput').value
+  console.log(activationThreshold)
+}
+
+let min = 4095
+let max = 0
+
+function minimax(val){
+  if (val > max){
+    max = val
+    console.log(`min: ${min}, max:${max}`)
+  } else if (val < min) {
+    min = val
+    console.log(`min: ${min}, max:${max}`)
+  }
+}
+
 function processFile() {
+    //user uploads a file
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
     if (!file) {
@@ -12,6 +33,7 @@ function processFile() {
         return;
     }
 
+    //
     const reader = new FileReader();
     reader.onload = function(e) {
         const lines = e.target.result.split('\n');
@@ -27,17 +49,23 @@ function parseLine(line) {
 
     const timestamp = parts[0];
     const data = parts[1].split(',').map(v => parseInt(v, 10));
+
     if (data.length !== 4 || data.some(v => v < 0 || v > 4095)) return null;
 
     const act1 = data[2] + data[3];
     const act2 = 4095 - data[0] + (4095 - data[1]);
+
+    if (act2 < activationThreshold) return
+
     const ydir = data[0] - data[1];
     const xdir = data[2] - data[3];
-    const x = 8000 + (xdir * 28000) / act1;
-    const y = 10000 + (ydir * 59200) / act1;
+    const x = (xdir * 28000) / act1;
+    const y = (ydir * 59200) / act1;
 
-    const x_out = convertRange(x,0,16000,0,1000).toFixed(0)
-    const y_out = convertRange(y,0,20000,0,1000).toFixed(0)
+    const x_out = convertRange(x,-8000,8000,0,1000).toFixed(0)
+    const y_out = convertRange(y,-1000,1000,0,1000).toFixed(0)
+
+    minimax(act2)
 
     return `${timestamp},${x_out},${y_out},${act2};`;
 }
