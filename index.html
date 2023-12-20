@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File Processor</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <input type="file" id="fileInput" accept=".txt">
-    <input type="number" id="thresholdInput" value="100">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="file" id="fileInput" accept=".txt" />
+    <input type="number" id="thresholdInput" value="100" />
     <button id="processButton">Process File</button>
+
+    <div id="lengths">
+        <p>Processing: <span id="processing"></span></p>
+        <p>Input data points: <span id="inputLength"></span></p> 
+        <p>Output data points: <span id="outputLength"></span></p> 
+    </div>
+
     <button id="downloadTxt">Download as TXT</button>
     <button id="downloadCsv">Download as CSV</button>
-    <script src="script.js"></script>
-</body>
+
+    <div
+      class="chart"
+      style="width: 1000px; display: flex; align-items: center"
+    >
+      <canvas id="liveChart"></canvas>
+    </div>
+
+
+
+    
+
+    <!-- Include moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include the adapter -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    <!-- Include chartjs-plugin-streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@latest"></script>
+
+<!-- My Scripts -->
+<script src="plot.js"></script>
+<script src="script.js"></script>
+  </body>
 </html>
