@@ -3,16 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File Processor</title>
+    <title>Data Processor</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <input type="file" id="fileInput" accept=".txt" />
-    <input type="number" id="thresholdInput" value="100" />
+
+    <p>
+      <span class="orange">Data to process:</span>
+      <input type="file" id="fileInput" accept=".txt" />
+    </p>  
+    
+    <p>
+      <spanc lass="orange">Set activation threshold:</span> 
+      <input type="number" id="thresholdInput" value="100" />
+      </p>
+
     <button id="processButton">Process File</button>
 
     <div id="lengths">
-        <p>Processing: <span id="processing"></span></p>
         <p>Input data points: <span id="inputLength"></span></p> 
         <p>Output data points: <span id="outputLength"></span></p> 
     </div>
