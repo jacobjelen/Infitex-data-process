@@ -22,7 +22,7 @@ document.getElementById("thresholdInput").onchange = () => {
 function processFile() {
   inputDatapoints = 0;
   outputDatapoints = 0;
-  // chartConfig.data.datasets[0].data = []
+  chartConfig.data.datasets[0].data = []
 
   //user uploads a file
   const fileInput = document.getElementById("fileInput");
