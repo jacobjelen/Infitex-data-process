@@ -44,11 +44,21 @@ Processing data from the 4-wire datalogger
 1. Install Arduino IDE
     - **[https://www.arduino.cc/en/software](https://www.arduino.cc/en/software)**
 
-2. Open DataloggerFirmware/DataloggerFirmware.ino in Arduino
+2. Install Seeed SAMD Library to Arduino IDO
+    - go to Arduino IDE (top left) - Settings
+    - In the "Additional Boards Manager URLs" field, add this URL: https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json 
+    - (if you have multiple URLs, separate them with commas)
+    - Click the "OK" button.
+    - go to Tools > Board > Boards Manager
+    - find "Seeed SAMD Boards" in the list and click the "Install" button.
+    - Wait for the installation to finish and click the "Close" button.
+    - You'll now see the XIAO and other Seed SAMD boards under the Tools > Board menu.
 
-3. Connect your data-logger to USB
+3. Open DataloggerFirmware/DataloggerFirmware.ino in Arduino
+
+4. Connect your data-logger to USB
     - Tools - Board - Seeed SAMD Boards - Seeeduino XIAO
     - Tools - Port - select the port where Seeeduino XIAO is connected
 
-4. Upload the firmware
+5. Upload the firmware
     - Sketch - Upload
